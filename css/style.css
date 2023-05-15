@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@1000&family=Rubik+Puddles&display=swap");
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Nunito";
+}
+html {
+	height: 100%;
+}
+body {
+	background-color: #beeefd;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.rain {
+	position:absolute;
+	top:-50%;
+	width: 100%;
+	height: 13%;
+	background-image: repeating-linear-gradient(90deg, #29899b, #29899b 3px,transparent 3px, transparent 30px);
+	animation:fall infinite linear 1s;
+}
+.rain::after{
+	content:'';
+	position:absolute;
+	top:100%;
+	left:15px;
+	width:100%;
+	height:100%;
+	background-image: repeating-linear-gradient(90deg, #29899b, #29899b 3px,transparent 3px, transparent 30px);
+}
+@keyframes fall{
+	to{
+		top:100%;
+	}
+}
+
+.cloud {
+	width: 250px;
+	height: 100px;
+	border-radius: 50rem;
+	background-color: #ffffff;
+	position: relative;
+	z-index: 3;
+}
+.cloud::before {
+	content: "";
+	position: absolute;
+	top: -20%;
+	right: 25%;
+	height: 50px;
+	width: 50px;
+	background: inherit;
+	border-radius: 50rem;
+}
+.cloud::after {
+	content: "";
+	position: absolute;
+	top: -50%;
+	left: 15%;
+	height: 120px;
+	width: 120px;
+	background: inherit;
+	border-radius: 50rem;
+}
+.face {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+	bottom: 30px;
+}
+.eye {
+	width: 10px;
+	height: 10px;
+	border-radius: 50rem;
+	background-color: #999999;
+}
+.mouth {
+	width: 20px;
+	height: 10px;
+	border-radius: 50rem;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border: 3px solid #999999;
+	border-bottom: none;
+	margin: 0 20px;
+}
+.rain {
+	width: 400px;
+	height: 200px;
+	margin-top: -50px;
+	position: relative;
+}
+.drop {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 0px 50rem 50rem 50rem;
+	transform: rotate(45deg);
+	background-color: #82d4f3;
+}
+.rain{
+	width:100%;
+	height:300px;
+	position:absolute;
+	top: 0;
+	background-image: radial-gradient(4px 4px at 50px 25px, #fff, transparent),
+		radial-gradient(6px 6px at 100px 75px, #fff, transparent),
+		radial-gradient(3px 3px at 150px 125px, #fff 50%, transparent),
+		radial-gradient(4px 4px at 200px 175px, #fff 50%, transparent),
+		radial-gradient(6px 6px at 200px 50px, #fff 50%, transparent),
+		radial-gradient(3px 3px at 25px 100px, #fff 50%, transparent),
+		radial-gradient(4px 4px at 75px 150px, #fff 50%, transparent),
+		radial-gradient(6px 6px at 125px 200px, #fff 50%, transparent),
+		radial-gradient(3px 3px at 175px 250px, #fff 50%, transparent);
+	background-size:100vw 100vh;
+	animation:fall 1s linear infinite;
+}
+.heading {
+	text-align: center;
+	color: #2aaae3;
+}
+h1 {
+	font-size: 8rem;
+	font-family: "Rubik Puddles", cursive;
+}
